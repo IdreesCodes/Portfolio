@@ -351,14 +351,17 @@ Widget whoIamDetailsWidget(double spaceAfterCards) {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          kWhoIamDetails,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            letterSpacing: 0.5,
-            fontSize: 14,
-            color: Colors.blueGrey,
-            fontWeight: FontWeight.w500,
+        Padding(
+          padding: const EdgeInsets.only(right: 38.0),
+          child: Text(
+            kWhoIamDetails,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              letterSpacing: 0.8,
+              fontSize: 14,
+              color: Colors.blueGrey,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ),
         SizedBox(

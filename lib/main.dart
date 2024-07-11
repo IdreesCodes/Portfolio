@@ -19,13 +19,14 @@ class PortfolioApp extends StatefulWidget {
 }
 
 class _PortfolioAppState extends State<PortfolioApp> {
-  double deviceWidth;
-  double deviceHeight;
+  late double deviceWidth;
+  late double deviceHeight;
 
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     return MaterialApp(
+      debugShowCheckedModeBanner: true,
         title: kTitle,
         theme: themeProvider.getTheme,
         home: Scaffold(

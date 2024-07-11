@@ -28,7 +28,7 @@ class DesktopNavbar extends StatefulWidget {
 
 class _DesktopNavbarState extends State<DesktopNavbar> {
   var utilityProvider;
-  ScrollController scrollController;
+  late ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class MobileNavbar extends StatefulWidget {
 
 class _MobileNavbarState extends State<MobileNavbar> {
   var utilityProvider;
-  ScrollController scrollController;
+  late ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -156,15 +156,17 @@ Widget navBarItems(ScrollController scrollController) {
 
 Widget navBarOptions(String title, int position, Function function) {
   return InkWell(
-    onTap: function,
-    // hoverColor: Colors.grey[200],
+    onTap: () {
+      function(); // Call the function when tapped
+    },
     borderRadius: BorderRadius.circular(16),
     child: Container(
       padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Text(
         title,
-        // style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600),
       ),
     ),
